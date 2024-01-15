@@ -8,7 +8,7 @@ import Navitems from './Navitems'
 
 const Header = () => {
   return (
-    <header className='m-1 shadow-xl '>
+    <header className='m-1  '>
       <div className='wrapper flex items-center justify-between'>
         <Link href='/'>
           <p className='font-mono font-bold text-2xl'>Bookit.</p>
