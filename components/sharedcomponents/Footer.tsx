@@ -7,7 +7,7 @@ const Footer = () => {
       <span className="text-lg">Bookit.</span>
       <span className="text-sm text-gray-600"> Freshytech. All rights are reserved 2024</span>
       </div>
-     
+      
 
     </div>
   )

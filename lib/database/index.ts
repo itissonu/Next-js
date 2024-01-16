@@ -19,6 +19,7 @@ export const connectTodb = async () => {
             bufferCommands: false,
         })
         cached.conn = await cached.promise;
+        console.log("db connected")
         return cached.conn;
     } catch (error) {
         console.error("error while connection:" + error)
