@@ -1,5 +1,6 @@
 //import CheckoutButton from '@/components/shared/CheckoutButton';
 //import Collection from '@/components/shared/Collection';
+
 import Collection from '@/components/sharedcomponents/Collection';
 import { getEventById, getRelatedEventsByCategory } from '@/lib/actions/event.actions'
 import { formatDateTime } from '@/lib/utils';
@@ -8,6 +9,7 @@ import Image from 'next/image';
 
 const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) => {
     const event = await getEventById(id);
+    console.log(event);
 
       const relatedEvents = await getRelatedEventsByCategory({
         categoryId: event.category._id,

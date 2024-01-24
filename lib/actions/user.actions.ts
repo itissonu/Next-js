@@ -14,10 +14,11 @@ import { connectTodb } from '../database'
 export async function createUser(user: CreateUserParams) {
   try {
     await connectTodb()
-
-    const newUser = await new User(user)
-    const saveduser=await newUser.save()
-    return JSON.parse(JSON.stringify(saveduser))
+    console.log("hi")
+    console.log(user)
+    const newUser = await User.create(user)
+    console.log(newUser+"hhhh");
+    return JSON.parse(JSON.stringify(newUser))
   } catch (error) {
     handleError(error)
   }
