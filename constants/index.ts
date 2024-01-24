@@ -14,7 +14,7 @@ export const headerLinks = [
   ]
   
   export const eventDefaultValues = {
-    title: '',
+    title: '',                                 //for form validation(zod)
     description: '',
     location: '',
     imageUrl: '',

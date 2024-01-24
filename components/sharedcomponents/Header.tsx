@@ -14,7 +14,7 @@ const Header = () => {
           <p className='font-mono font-bold text-2xl'>Bookit.</p>
         </Link>
         <SignedIn>
-          <nav className="md:flex-between hidden w-full max-w-[23rem]">
+          <nav className="md:flex-between hidden w-full max-w-[25rem]">
             <Navitems />
           </nav>
         </SignedIn>
