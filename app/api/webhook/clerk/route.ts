@@ -1,3 +1,5 @@
+'use server'
+
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
@@ -56,16 +58,16 @@ export async function POST(req: Request) {
  
   if(eventType === 'user.created') {
     const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
-    console.log(evt.data)
+   
     const user = {
-      clerkId: id,
+      clerkId: id, 
       email: email_addresses[0].email_address,
       username: username!,
-      firstName:'admin',
-      lastName:'admin',
+      firstName:first_name,
+      lastName:last_name,
       photo: image_url,
-    }
-
+    } 
+console.log(user);
     const newUser = await createUser(user);
 
     if(newUser) {
@@ -80,8 +82,9 @@ export async function POST(req: Request) {
   }
 
   if (eventType === 'user.updated') {
+    console.log("bhau")
     const {id, image_url, first_name, last_name, username } = evt.data
-
+    console.log({id, image_url, first_name, last_name, username })
     const user = {
       firstName: first_name,
       lastName: last_name,
@@ -91,7 +94,7 @@ export async function POST(req: Request) {
 
     const updatedUser = await updateUser(id, user)
 
-    return NextResponse.json({ message: 'OK', user: updatedUser })
+    return NextResponse.json({ message: 'OKboys', user: user })
   }
 
   if (eventType === 'user.deleted') {
